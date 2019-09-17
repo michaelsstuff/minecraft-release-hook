@@ -15,5 +15,5 @@ Create a .env with your URL:
 
 ```crontab
 MAILTO="mycool@mailaddress.net"
-* */2 * * * docker run --rm -it --env-file /etc/.env -v /etc/mc-version.json:/root/version.json halandar/mc-release-webhoock:latest
+* */2 * * * docker run --rm -it --env-file /etc/.env -v /etc/mc-version.json:/root/version.json halandar/mc-release-webhook:latest
 ```
