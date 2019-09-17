@@ -34,8 +34,6 @@ if lastknown_snap == latest_snap:
 else:
     print("Newer version detected")
     print("The new version is", latest_snap)
-    with open('version.json', 'w', encoding='utf-8') as f:
-        json.dump({"saved_version": latest_snap}, f)
     connapi = http.client.HTTPSConnection(api_parsed.hostname)
     connapi.request("POST", api_parsed.path)
     response = connapi.getresponse()
@@ -44,4 +42,6 @@ else:
         print(response.status, response.reason)
         sys.exit(1)
     print ("Build request was send.")
+    with open('version.json', 'w', encoding='utf-8') as f:
+    json.dump({"saved_version": latest_snap}, f)
     sys.exit(0)
