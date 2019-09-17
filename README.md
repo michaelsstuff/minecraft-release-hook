@@ -10,3 +10,10 @@ Create a .env with your URL:
 ## run container
 
 `docker run --rm -it --env-file  .env -v $(pwd)/version.json:/root/version.json halandar/mc-release-webhook:latest`
+
+## crontab example
+
+```crontab
+MAILTO="mycool@mailaddress.net"
+* */2 * * * docker run --rm -it --env-file /etc/.env -v /etc/mc-version.json:/root/version.json halandar/mc-release-webhoock:latest
+```
