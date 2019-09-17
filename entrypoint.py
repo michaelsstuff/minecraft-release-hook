@@ -43,5 +43,5 @@ else:
         sys.exit(1)
     print ("Build request was send.")
     with open('version.json', 'w', encoding='utf-8') as f:
-    json.dump({"saved_version": latest_snap}, f)
+        json.dump({"saved_version": latest_snap}, f)
     sys.exit(0)
